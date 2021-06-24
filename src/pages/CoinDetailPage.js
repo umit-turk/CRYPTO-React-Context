@@ -20,6 +20,7 @@ const CoinDetailPage = () => {
 
   useEffect(() => {
     const fetchData = async () => {
+      
       setIsLoading(true);
       const [day, week, year, detail] = await Promise.all([
         coinGecko.get(`/coins/${id}/market_chart/`, {
@@ -70,7 +71,7 @@ const CoinDetailPage = () => {
     return (
       <div className="coinlist">
         <HistoryChart data={coinData}/>
-        <CoinData />
+        <CoinData data={coinData.detail} />
       </div>
     );
   };
