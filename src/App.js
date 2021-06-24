@@ -10,7 +10,9 @@ const App = () => {
     <div className="container">
       <WatchListContextProvider>
         <BrowserRouter>
-          <Header />
+        <Route>
+          <Header path="/"/>
+          </Route>
           <Route exact path="/" component={CoinSummaryPage} />
           <Route path="/coins/:id"  component={CoinDetailPage}/>
         </BrowserRouter>
